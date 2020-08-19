@@ -1,0 +1,19 @@
+{
+  "name": "packaged/predicate",
+  "require": {
+    "php": ">=7.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Packaged\\Predicate\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Packaged\\Predicate\\Tests\\": "tests"
+    }
+  }
+}
