@@ -49,10 +49,15 @@ abstract class AbstractPredicate implements Predicate, JsonSerializable
 
   public function jsonSerialize()
   {
-    return [
+    $data = [
       'predicate' => static::identifier(),
       'expect'    => $this->_expected,
     ];
+    if($this->_negate)
+    {
+      $data['negate'] = (bool)$this->_negate;
+    }
+    return $data;
   }
 
   public function __toString()

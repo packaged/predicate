@@ -82,6 +82,10 @@ class PredicateTest extends TestCase
         '{"predicate":"=","expect":"test"}',
       ],
       [
+        EqualPredicate::i('test-negate')->negate(),
+        '{"predicate":"=","expect":"test-negate","negate":true}',
+      ],
+      [
         AndPredicateSet::i([GreaterThanPredicate::i(5), LessThanPredicate::i(10)]),
         '{"predicate":"and","expect":[{"predicate":">","expect":5},{"predicate":"<","expect":10}]}',
       ],
