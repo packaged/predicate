@@ -14,7 +14,7 @@ abstract class AbstractPredicate implements Predicate, JsonSerializable
   public static function i($expected = null)
   {
     $o = new static();
-    if($expected)
+    if($expected !== null)
     {
       $o->expect($expected);
     }
