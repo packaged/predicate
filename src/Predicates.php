@@ -17,10 +17,15 @@ class Predicates
     OrPredicateSet::class,
   ];
 
+  public static function fromArray(array $data): ?Predicate
+  {
+    return static::getPredicate($data['predicate'])->deserialize($data);
+  }
+
   public static function deserialize(string $serialized): ?Predicate
   {
     $data = json_decode($serialized, true);
-    return static::getPredicate($data['predicate'])->deserialize($data);
+    return static::fromArray($data);
   }
 
   public static function getPredicate($identifier): ?Predicate
